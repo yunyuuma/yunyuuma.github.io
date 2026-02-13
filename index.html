@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="device-width,
+        initial-scale=1.0">
+
+ <!-- CSS読み込み -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<header>
+    <h1 onclick="showSection('home'); showCoffee()">ゆうまのポートフォリオ</h1>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('about')">About</a></li>
+            <li><a href="#" onclick="showSection('hobbies')">Hobbies</a></li>
+            <li><a href="#" onclick="showSection('diary')">Diary</a></li>
+            <li><a href="#" onclick="showSection('comment')">Comment</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<!-- Home -->
+<section id="home" class="content">
+
+    <!-- WATASHI -->
+    <div class="home-hero fade-in">
+        <h2 class="home-title">これが私</h2>
+        <p class="home-sub">変人 × 楽観主義 × 気まぐれ × わがまま</p>
+    </div>
+
+    <!-- Category -->
+    <div class="home-summary fade-in">
+        <div class="summary-text">
+            <h3>自己評価</h3>
+            <p>
+                典型的なENTP人間<br>
+                新しいチャレンジ―を常に行う。<br>
+                外には気まぐれ、自分ではに世界一厳しいタイプ。<br>
+            </p>
+        </div>
+
+        <div class="summary-chart fade-in">
+            <canvas id="homeSkillChart" width="350" height="350"></canvas>
+        </div>
+    </div>
+
+    <!-- Strength -->
+    <div class="home-strength fade-in">
+        <h3>私の強み</h3>
+        <ul>
+            <li>率直な発言（？）</li>
+            <li>勉強、勉強、勉強（これガチ）</li>
+            <li>行動力（負けたことない！）</li>
+            <li>自己反省力（自己満じゃない？）</li>
+        </ul>
+    </div>
+
+</section>
+
+
+
+<!-- About -->
+<section id="about" class="content">
+    <h2>About</h2>
+    
+    <div class="fade-in">
+        <h3>自己紹介</h3>
+            <p class="self-text">
+            25新卒の如月優馬です。<br>
+            （米国育ち→父韓国ｘ母中国）大学では情報工学、大学院では経営工学を専攻しました。<br>
+            2月からIT本部のシステム管理部に配属され、現在研修中です。<br>
+            趣味はギター演奏と写真撮影で、コーヒーとワインが大好物です。<br>
+            将来は、プログラミング力を生かして新しいサービスを創出することを目標としています。
+            </p>
+    
+        <h3>所持資格</h3>
+        <ul class="cert-list">
+            <li>社員必須:TOEIC、IT Passport、証券外務員</li>
+            <li>金融系:FP2級、日商簿記2級</li>
+            <li>情報系:基本情報技術者、応用情報技術者、G検定</li>
+            <li>数学系:統計検定2級</li>
+            <li>趣味系:ワイン検定、コーヒープロフェッションナル</li>
+        </ul>
+
+
+        <h3>座右の銘</h3>
+        <p>自分らしく生きよう。</p>
+    </div>
+
+</section>
+
+<!-- Hobbies -->
+<section id="hobbies" class="content">
+    <h2>Hobbies</h2>
+
+    <div class="hobby-item guitar" onclick="toggleHobby(this)">
+        <h3>ギター</h3>
+        <div class="hobby-detail">
+            <ul>
+                <li>歴5年</li>
+                <li>好きな理由：音で感情を表現できるから</li>
+                <li>得意作品：アコースティックアレンジ</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="hobby-item camera" onclick="toggleHobby(this)">
+        <h3>撮影</h3>
+        <div class="hobby-detail">
+            <ul>
+                <li>歴3年</li>
+                <li>好きな理由：生活を記録するから</li>
+                <li>得意作品：星空撮影</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="hobby-item beans" onclick="toggleHobby(this)">
+        <h3>コーヒー</h3>
+        <div class="hobby-detail">
+            <ul>
+                <li>歴2年</li>
+                <li>好きな理由：飲むといい気分になるから</li>
+                <li>得意作品：コールドブリュー</li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- Diary -->
+<section id="diary" class="content">
+    <h2>Diary</h2>
+
+    <input type="date" id="diaryDate">
+
+    <br><br>
+
+    <textarea id="diaryText" placeholder="この日の日記を書く"></textarea>
+    <br>
+    <button onclick="saveDiary()">保存</button>
+
+    <p id="savedMessage"></p>
+</section>
+
+<!-- Comment -->
+<section id="comment" class="content">
+    <h2>Comment</h2>
+    <form action="mailto:nekocolin@outlook.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="お名前"><br>
+        <textarea name="message" placeholder="コメントを書く"></textarea><br>
+        <button type="submit">送信</button>
+    </form>
+</section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/script.js"></script>
+
+
+</body>
+</html>
