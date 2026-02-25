@@ -134,24 +134,19 @@ fadeElements.forEach(el => observer.observe(el));
 
 function showSection(id) {
 
-    // 全セクション非表示
     document.querySelectorAll('.content').forEach(section => {
         section.style.display = 'none';
     });
 
-    // 指定セクション表示
     const activeSection = document.getElementById(id);
     activeSection.style.display = 'block';
 
-    // ===== フェード再実行 =====
     const fadeElements = activeSection.querySelectorAll('.fade-in');
 
-    // 一度リセット
     fadeElements.forEach(el => {
         el.classList.remove('show');
     });
 
-    // 順番に表示（スタッガー演出）
     fadeElements.forEach((el, index) => {
         setTimeout(() => {
             el.classList.add('show');
