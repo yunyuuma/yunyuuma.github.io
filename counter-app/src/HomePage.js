@@ -13,6 +13,7 @@ export default function HomePage({ onLogout }) {
   );
 }
 
+
 const styles = {
   wrap: {
     maxWidth: 420,
